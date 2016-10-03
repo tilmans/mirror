@@ -6,7 +6,6 @@ void ofApp::setup(){
     multiplier = 2;
     width = 1280;
     height = 720;
-    offset = 60;
     
     video.setup(width, height, true);
     video.videoSettings();
@@ -20,8 +19,8 @@ void ofApp::setup(){
     gui.add(alpha.setup("Alpha", 255, 0, 255));
     gui.add(face.setup("Camera", false));
     gui.add(showblob.setup("Blobs", false));
-    gui.add(max.setup("Max", 50000, 10000, 100000));
-    gui.add(min.setup("Min", 20000, 10000, 100000));
+    gui.add(max.setup("Max", 60000, 10000, 100000));
+    gui.add(min.setup("Min", 35000, 10000, 100000));
 }
 
 //--------------------------------------------------------------
@@ -30,6 +29,7 @@ void ofApp::update(){
     
     if (video.isFrameNew()) {
         image = ofImage(video.getPixels());
+        image.mirror(false, true);
         ofImage small;
         small.clone(image);
         small.setImageType(OF_IMAGE_GRAYSCALE);
@@ -40,9 +40,11 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    // ofSetColor(255, 0, 0);
+    float xscale = (float)ofGetWidth()/(float)1280;
+    float yscale = (float)ofGetHeight()/(float)720;
     if(face) {
-        image.draw(0,0);
+        ofSetColor(255, 255, 255, 255);
+        image.draw(0,0,ofGetWidth(),ofGetHeight());
     }
     ofNoFill();
     ofSetColor(255, 255, 255, alpha);
@@ -58,7 +60,10 @@ void ofApp::draw(){
         }
     }
     
-    bot.draw(mainblob.boundingRect.getTopLeft().x*multiplier, mainblob.boundingRect.getTopLeft().y*multiplier-offset, mainblob.boundingRect.width*multiplier, mainblob.boundingRect.height*ratio*multiplier);
+    bot.draw(mainblob.boundingRect.getTopLeft().x*multiplier*xscale,
+             mainblob.boundingRect.getTopLeft().y*multiplier*yscale-offset,
+             mainblob.boundingRect.width*multiplier*xscale,
+             mainblob.boundingRect.height*ratio*multiplier*yscale);
     
     alpha = ofMap(mainblob.area, min, max, 0, 255);
         
