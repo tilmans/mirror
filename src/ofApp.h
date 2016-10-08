@@ -26,27 +26,25 @@ class ofApp : public ofBaseApp{
 		
     ofVideoGrabber video;
     
-    ofxCvHaarFinder haarFinder;
+    ofxCvHaarFinder faceFinderFront;
+    ofxCvHaarFinder faceFinderSide;
+    ofxCvHaarFinder eyeFinder;
+    ofxCvBlob leftEye;
+    ofxCvBlob rightEye;
+    
     ofImage image;
-    ofImage bot;
+    ofImage small;
     int multiplier;
     int width,height;
-    float ratio;
-    // int offset;
     
-    //ofxFloatSlider radius;
-    //ofxColorSlider color;
-    //ofxVec2Slider center;
     ofxIntSlider offset;
     ofxFloatSlider scale;
+    ofxIntSlider cropWidth;
     ofxIntSlider alpha;
     ofxIntSlider max;
     ofxIntSlider min;
     ofxToggle face;
     ofxToggle showblob;
-    //ofxButton twoCircles;
-    //ofxButton ringButton;
-    //ofxLabel screenSize;
     
     ofxPanel gui;
     
