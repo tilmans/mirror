@@ -20,6 +20,8 @@ void ofApp::setup(){
     gui.add(scale.setup("Scale", 3, 0, 10));
     gui.add(cropWidth.setup("Crop", 300, 100, 1000));
     gui.add(alpha.setup("Alpha", 255, 0, 255));
+    gui.add(brightness.setup("Brightness", .5, 0, 1));
+    gui.add(contrast.setup("Contrast", .5, 0, 1));
     gui.add(face.setup("Camera", true));
     gui.add(showblob.setup("Blobs", true));
     gui.add(max.setup("Max", 60000, 10000, 100000));
@@ -34,11 +36,14 @@ void ofApp::update(){
         image = ofImage(video.getPixels());
         image.crop(image.getWidth()/2-cropWidth/2,0,cropWidth,image.getHeight());
         image.mirror(false, true);
+        ofImage small;
         small.clone(image);
         small.setImageType(OF_IMAGE_GRAYSCALE);
         small.resize(image.getWidth()/multiplier,image.getHeight()/multiplier);
-        faceFinderFront.findHaarObjects(small);
-        eyeFinder.findHaarObjects(small);
+        cvi.setFromPixels(small);
+        cvi.brightnessContrast(brightness, contrast);
+        faceFinderFront.findHaarObjects(cvi);
+        eyeFinder.findHaarObjects(cvi);
         
         /*
         for (int i=0; i<haarFinder.blobs.size(); i++) {
@@ -66,6 +71,8 @@ void ofApp::draw(){
     
     ofNoFill();
     if (showblob) {
+        ofImage small;
+        small.setFromPixels(cvi.getPixels());
         small.draw(ofGetWidth()-small.getWidth(), ofGetHeight()-small.getHeight(), small.getWidth(), small.getHeight());
         
         ofSetColor(255, 0, 0, 255);

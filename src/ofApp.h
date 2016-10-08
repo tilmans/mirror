@@ -33,13 +33,15 @@ class ofApp : public ofBaseApp{
     ofxCvBlob rightEye;
     
     ofImage image;
-    ofImage small;
+    ofxCvGrayscaleImage cvi;
     int multiplier;
     int width,height;
     
     ofxIntSlider offset;
     ofxFloatSlider scale;
     ofxIntSlider cropWidth;
+    ofxFloatSlider brightness;
+    ofxFloatSlider contrast;
     ofxIntSlider alpha;
     ofxIntSlider max;
     ofxIntSlider min;
