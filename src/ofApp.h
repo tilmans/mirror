@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxOpenCv.h"
 #include "ofxGui.h"
+#include "ofxAssimpModelLoader.h"
 
 class ofApp : public ofBaseApp{
 
@@ -37,6 +38,7 @@ class ofApp : public ofBaseApp{
     //ofxColorSlider color;
     //ofxVec2Slider center;
     ofxIntSlider offset;
+    ofxFloatSlider scale;
     ofxIntSlider alpha;
     ofxIntSlider max;
     ofxIntSlider min;
@@ -47,5 +49,10 @@ class ofApp : public ofBaseApp{
     //ofxLabel screenSize;
     
     ofxPanel gui;
+    
+    ofxAssimpModelLoader model;
+    
+    ofLight light;
+    ofMaterial material;
 
 };

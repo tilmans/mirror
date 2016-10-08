@@ -1,4 +1,6 @@
+ofxAssimpModelLoader
 ofxGui
+ofxNetwork
 ofxOpenCv
 ofxOsc
 ofxXmlSettings
