@@ -26,6 +26,9 @@ void ofApp::setup(){
     gui.add(showblob.setup("Blobs", true));
     gui.add(max.setup("Max", 60000, 10000, 100000));
     gui.add(min.setup("Min", 35000, 10000, 100000));
+
+    gui.add(minsize.setup("MinSize", 100, 0, 1000));
+    gui.add(maxsize.setup("maxSize", 30000, 0, 10000));
 }
 
 //--------------------------------------------------------------
@@ -44,6 +47,8 @@ void ofApp::update(){
         cvi.brightnessContrast(brightness, contrast);
         faceFinderFront.findHaarObjects(cvi);
         eyeFinder.findHaarObjects(cvi);
+        contour.findContours(cvi,minsize,maxsize,100,false,true);
+        ofLog() << "Blobs found" << contour.nBlobs;
         
         /*
         for (int i=0; i<haarFinder.blobs.size(); i++) {
@@ -69,6 +74,7 @@ void ofApp::draw(){
         image.draw(ofGetWidth()/2-cropWidth/2,0,image.getWidth(),image.getHeight());
     }
     
+    ofxCvBlob mainblob;
     ofNoFill();
     if (showblob) {
         ofImage small;
@@ -78,6 +84,7 @@ void ofApp::draw(){
         ofSetColor(255, 0, 0, 255);
         for (int i=0; i<faceFinderFront.blobs.size(); i++) {
             ofxCvBlob blob = faceFinderFront.blobs[i];
+            mainblob = blob;
             ofDrawRectangle(
                             ofGetWidth()/2-cropWidth/2+blob.boundingRect.getTopLeft().x*multiplier,
                             blob.boundingRect.getTopLeft().y*multiplier,
@@ -93,9 +100,10 @@ void ofApp::draw(){
                             blob.boundingRect.width*multiplier,
                             blob.boundingRect.height*multiplier);
         }
+        
     }
     
-    /*
+    
     alpha = ofMap(mainblob.area, min, max, 0, 255);
     
     light.setPosition(ofGetWidth()/2, ofGetHeight()/2, 600);
@@ -108,9 +116,10 @@ void ofApp::draw(){
     ofEnableDepthTest();
     model.drawFaces();
     ofDisableDepthTest();
-     */
+    
     
     gui.draw();
+    contour.draw();
 }
 
 //--------------------------------------------------------------

@@ -32,6 +32,8 @@ class ofApp : public ofBaseApp{
     ofxCvBlob leftEye;
     ofxCvBlob rightEye;
     
+    ofxCvContourFinder contour;
+    
     ofImage image;
     ofxCvGrayscaleImage cvi;
     int multiplier;
@@ -47,7 +49,10 @@ class ofApp : public ofBaseApp{
     ofxIntSlider min;
     ofxToggle face;
     ofxToggle showblob;
-    
+
+    ofxIntSlider minsize;
+    ofxIntSlider maxsize;
+
     ofxPanel gui;
     
     ofxAssimpModelLoader model;
