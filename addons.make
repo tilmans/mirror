@@ -1,4 +1,5 @@
 ofxAssimpModelLoader
+ofxFaceTracker2
 ofxGui
 ofxNetwork
 ofxOpenCv

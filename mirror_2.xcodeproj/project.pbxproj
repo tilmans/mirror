@@ -4664,6 +4664,164 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
+			<key>824E6CF93E030D7816DA38FA</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxFaceTracker2Landmarks.h</string>
+				<key>path</key>
+				<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/src/ofxFaceTracker2Landmarks.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>51C4933BA58949F1FE654A92</key>
+			<dict>
+				<key>fileRef</key>
+				<string>530692A6E0AA5C5AE85C6593</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>530692A6E0AA5C5AE85C6593</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxFaceTracker2Landmarks.cpp</string>
+				<key>path</key>
+				<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/src/ofxFaceTracker2Landmarks.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>04EA4F582B6AD6CD6B0B65F5</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxFaceTracker2Instance.h</string>
+				<key>path</key>
+				<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/src/ofxFaceTracker2Instance.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>31BCA5B60A0F35E8C8777A97</key>
+			<dict>
+				<key>fileRef</key>
+				<string>0A7ABABF3934F1F3C1ED0C77</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>0A7ABABF3934F1F3C1ED0C77</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxFaceTracker2Instance.cpp</string>
+				<key>path</key>
+				<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/src/ofxFaceTracker2Instance.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>749E3A46E9B737D29083A176</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxFaceTracker2InputInfo.h</string>
+				<key>path</key>
+				<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/src/ofxFaceTracker2InputInfo.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>5BEE95FFF696BCE7411CD6E7</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxFaceTracker2.h</string>
+				<key>path</key>
+				<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/src/ofxFaceTracker2.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>2C430677B0E722B5EB0C1FC1</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>508A598BCC5BF842D5566930</string>
+					<string>5BEE95FFF696BCE7411CD6E7</string>
+					<string>749E3A46E9B737D29083A176</string>
+					<string>0A7ABABF3934F1F3C1ED0C77</string>
+					<string>04EA4F582B6AD6CD6B0B65F5</string>
+					<string>530692A6E0AA5C5AE85C6593</string>
+					<string>824E6CF93E030D7816DA38FA</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>src</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>F5097071A8A63295555F2601</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>2C430677B0E722B5EB0C1FC1</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>ofxFaceTracker2</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>AE46782344A2AB632FC319EE</key>
+			<dict>
+				<key>fileRef</key>
+				<string>508A598BCC5BF842D5566930</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>508A598BCC5BF842D5566930</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxFaceTracker2.cpp</string>
+				<key>path</key>
+				<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/src/ofxFaceTracker2.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>02108BF966869AEFBFBE6000</key>
 			<dict>
 				<key>explicitFileType</key>
@@ -5518,6 +5676,7 @@
 				<key>children</key>
 				<array>
 					<string>2C8F245ACBE61E28646C17F2</string>
+					<string>F5097071A8A63295555F2601</string>
 					<string>480A780D8D0308AE4A368801</string>
 					<string>18240ECCE4076FB0833A8578</string>
 					<string>A0B90D3B0ADB9C1716816714</string>
@@ -5673,10 +5832,15 @@
 				<string>E4EB6923138AFD0F00A09F29</string>
 				<key>buildSettings</key>
 				<dict>
+					<key>OTHER_CFLAGS</key>
+					<array>
+						<string>-O2</string>
+					</array>
 					<key>OTHER_LDFLAGS</key>
 					<array>
 						<string>$(OF_CORE_FRAMEWORKS) $(OF_CORE_LIBS)</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/libs/assimp/lib/osx/assimp.a</string>
+						<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/libs/dlib/lib/osx/libdlib.a</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxOpenCv/libs/opencv/lib/osx/opencv.a</string>
 					</array>
 					<key>HEADER_SEARCH_PATHS</key>
@@ -5693,6 +5857,8 @@
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/libs/assimp/lib/osx</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/libs/assimp/license</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/src</string>
+						<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/libs/dlib/include</string>
+						<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/src</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxGui/src</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxNetwork/src</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxOpenCv/libs</string>
@@ -5790,10 +5956,15 @@
 				<string>E4EB6923138AFD0F00A09F29</string>
 				<key>buildSettings</key>
 				<dict>
+					<key>OTHER_CFLAGS</key>
+					<array>
+						<string>-O2</string>
+					</array>
 					<key>OTHER_LDFLAGS</key>
 					<array>
 						<string>$(OF_CORE_FRAMEWORKS) $(OF_CORE_LIBS)</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/libs/assimp/lib/osx/assimp.a</string>
+						<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/libs/dlib/lib/osx/libdlib.a</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxOpenCv/libs/opencv/lib/osx/opencv.a</string>
 					</array>
 					<key>HEADER_SEARCH_PATHS</key>
@@ -5810,6 +5981,8 @@
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/libs/assimp/lib/osx</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/libs/assimp/license</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/src</string>
+						<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/libs/dlib/include</string>
+						<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/src</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxGui/src</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxNetwork/src</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxOpenCv/libs</string>
@@ -5913,6 +6086,9 @@
 					<string>52BD2A9E8D18DE6B1941FA10</string>
 					<string>58C72BA0A6386D6D8B3E7B87</string>
 					<string>4EB5DE9961F9977CC3287276</string>
+					<string>AE46782344A2AB632FC319EE</string>
+					<string>31BCA5B60A0F35E8C8777A97</string>
+					<string>51C4933BA58949F1FE654A92</string>
 					<string>4A09F1FF7F93D80B0679828B</string>
 					<string>1EE6F8B4ED07BA42C8FAEB9B</string>
 					<string>BD821CFCCF3AB153FF434F20</string>
@@ -6028,10 +6204,15 @@
 				<string>E4EB6923138AFD0F00A09F29</string>
 				<key>buildSettings</key>
 				<dict>
+					<key>OTHER_CFLAGS</key>
+					<array>
+						<string>-O2</string>
+					</array>
 					<key>OTHER_LDFLAGS</key>
 					<array>
 						<string>$(OF_CORE_FRAMEWORKS) $(OF_CORE_LIBS)</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/libs/assimp/lib/osx/assimp.a</string>
+						<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/libs/dlib/lib/osx/libdlib.a</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxOpenCv/libs/opencv/lib/osx/opencv.a</string>
 					</array>
 					<key>HEADER_SEARCH_PATHS</key>
@@ -6048,6 +6229,8 @@
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/libs/assimp/lib/osx</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/libs/assimp/license</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/src</string>
+						<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/libs/dlib/include</string>
+						<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/src</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxGui/src</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxNetwork/src</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxOpenCv/libs</string>
@@ -6135,10 +6318,15 @@
 				<string>E4EB6923138AFD0F00A09F29</string>
 				<key>buildSettings</key>
 				<dict>
+					<key>OTHER_CFLAGS</key>
+					<array>
+						<string>-O2</string>
+					</array>
 					<key>OTHER_LDFLAGS</key>
 					<array>
 						<string>$(OF_CORE_FRAMEWORKS) $(OF_CORE_LIBS)</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/libs/assimp/lib/osx/assimp.a</string>
+						<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/libs/dlib/lib/osx/libdlib.a</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxOpenCv/libs/opencv/lib/osx/opencv.a</string>
 					</array>
 					<key>HEADER_SEARCH_PATHS</key>
@@ -6155,6 +6343,8 @@
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/libs/assimp/lib/osx</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/libs/assimp/license</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxAssimpModelLoader/src</string>
+						<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/libs/dlib/include</string>
+						<string>../../of_v0.9.8_osx_release/addons/ofxFaceTracker2/src</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxGui/src</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxNetwork/src</string>
 						<string>../../of_v0.9.8_osx_release/addons/ofxOpenCv/libs</string>
