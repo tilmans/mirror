@@ -4,6 +4,7 @@
 #include "ofxOpenCv.h"
 #include "ofxGui.h"
 #include "ofxAssimpModelLoader.h"
+#include "ofxFaceTracker2.h"
 
 class ofApp : public ofBaseApp{
 
@@ -36,6 +37,7 @@ class ofApp : public ofBaseApp{
     
     ofImage image;
     ofxCvGrayscaleImage cvi;
+
     int multiplier;
     int width,height;
     
@@ -59,5 +61,7 @@ class ofApp : public ofBaseApp{
     
     ofLight light;
     ofMaterial material;
-
+    
+    ofxFaceTracker2 tracker;
+    ofVideoGrabber grabber;
 };

@@ -5,3 +5,4 @@ settings.xml
 bin/mirror_2Debug.app
 mirror_2.xcodeproj/project.xcworkspace/xcuserdata/tilman.xcuserdatad
 mirror_2.xcodeproj/xcuserdata/tilman.xcuserdatad
+shape_predictor_68_face_landmarks.dat

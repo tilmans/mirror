@@ -29,6 +29,8 @@ void ofApp::setup(){
 
     gui.add(minsize.setup("MinSize", 100, 0, 1000));
     gui.add(maxsize.setup("maxSize", 30000, 0, 10000));
+    
+    tracker.setup();
 }
 
 //--------------------------------------------------------------
@@ -36,6 +38,7 @@ void ofApp::update(){
     video.update();
     
     if (video.isFrameNew()) {
+        tracker.update(video);
         image = ofImage(video.getPixels());
         image.crop(image.getWidth()/2-cropWidth/2,0,cropWidth,image.getHeight());
         image.mirror(false, true);
@@ -116,6 +119,9 @@ void ofApp::draw(){
     ofEnableDepthTest();
     model.drawFaces();
     ofDisableDepthTest();
+    
+    tracker.drawDebug();
+    tracker.drawDebugPose();
     
     
     gui.draw();
