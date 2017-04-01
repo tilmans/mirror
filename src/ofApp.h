@@ -29,13 +29,18 @@ class ofApp : public ofBaseApp{
     ofxFaceTracker2 tracker;
         
     ofImage image;
-
-    int multiplier;
-    int width,height;
     
     ofxToggle videoDisplay;
     ofxToggle showFace;
     ofxToggle showGuide;
+    ofxToggle showHead;
+    ofxFloatSlider x;
+    ofxFloatSlider y;
+    ofxFloatSlider z;
+    ofxFloatSlider scale;
     ofxPanel gui;
-    
+
+    ofxAssimpModelLoader model;
+    ofLight light;
+    ofMaterial material;
 };

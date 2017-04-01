@@ -2,15 +2,19 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    width = 1280;
-    height = 720;
+    model.loadModel("cgtuts-facial-setup.dae");
+
+    video.setup(1280, 720, true);
     
-    video.setup(width, height, true);
-    
-    gui.setup(); // most of the time you don't need a name
+    gui.setup();
     gui.add(videoDisplay.setup("Video [v]", true));
-    gui.add(showFace.setup("Face [f]", true));
-    gui.add(showGuide.setup("Face Guide [g]", true));
+    gui.add(showFace.setup("Face [f]", false));
+    gui.add(showGuide.setup("Face Guide [g]", false));
+    gui.add(showHead.setup("Head [h]", true));
+    gui.add(x.setup("X", 0, -500, 500));
+    gui.add(y.setup("Y", -175, -500, 500));
+    gui.add(z.setup("Z", 100, -500, 500));
+    gui.add(scale.setup("Scale", 0.51, 0, 2));
 
     tracker.setup();
 }
@@ -24,8 +28,6 @@ void ofApp::update(){
         image.mirror(false,true);
 
         tracker.update(image);
-        
-        vector<ofxFaceTracker2Instance> inst = tracker.getInstances();
     }
 }
 
@@ -34,6 +36,29 @@ void ofApp::draw(){
     if (videoDisplay)
         image.draw(0, 0);
     
+    if (showHead) {
+        if (tracker.size() > 0) {
+            ofPushView();
+            
+            tracker.getInstances()[0].loadPoseMatrix();
+            
+            model.setRotation(0, 180, 1, 0, 0);
+            model.setPosition(x, y, z);
+            model.setScale(scale, scale, scale);
+            
+            light.setPosition(ofGetWidth()/2, ofGetHeight()/2, 600);
+            light.enable();
+            
+            material.begin();
+            ofEnableDepthTest();
+            model.drawFaces();
+            ofDisableDepthTest();
+            material.end();
+            
+            ofPopView();
+        }
+    }
+
     if (showFace)
         tracker.drawDebug();
     
@@ -41,6 +66,7 @@ void ofApp::draw(){
         tracker.drawDebugPose();
 
     gui.draw();
+    
 }
 
 //--------------------------------------------------------------
@@ -58,6 +84,9 @@ void ofApp::keyReleased(int key){
     
     if (key == 'g')
         showGuide = !showGuide;
+    
+    if (key == 'h')
+        showHead = !showHead;
 }
 
 //--------------------------------------------------------------
