@@ -12,13 +12,13 @@ void ofApp::setup(){
     video.setup(width, height, true);
     video.videoSettings();
     
-    eyeFinder.setup("cascades/haarcascades_cuda/haarcascade_eye_tree_eyeglasses.xml");
-    faceFinderFront.setup("cascades/haarcascades_cuda/haarcascade_frontalface_default.xml");
+    // eyeFinder.setup("cascades/haarcascades_cuda/haarcascade_eye_tree_eyeglasses.xml");
+    // faceFinderFront.setup("cascades/haarcascades_cuda/haarcascade_frontalface_default.xml");
     
     gui.setup(); // most of the time you don't need a name
     gui.add(offset.setup("Offset", 300, 0, 500));
     gui.add(scale.setup("Scale", 3, 0, 10));
-    gui.add(cropWidth.setup("Crop", 300, 100, 1000));
+    gui.add(cropWidth.setup("Crop", 1000, 100, 1000));
     gui.add(alpha.setup("Alpha", 255, 0, 255));
     gui.add(brightness.setup("Brightness", .5, 0, 1));
     gui.add(contrast.setup("Contrast", .5, 0, 1));
@@ -38,20 +38,27 @@ void ofApp::update(){
     video.update();
     
     if (video.isFrameNew()) {
-        tracker.update(video);
         image = ofImage(video.getPixels());
         image.crop(image.getWidth()/2-cropWidth/2,0,cropWidth,image.getHeight());
-        image.mirror(false, true);
-        ofImage small;
+
+        tracker.update(image);
+
+        // image.mirror(false, true);
+        
+        
+        /*ofImage small;
         small.clone(image);
         small.setImageType(OF_IMAGE_GRAYSCALE);
         small.resize(image.getWidth()/multiplier,image.getHeight()/multiplier);
         cvi.setFromPixels(small);
         cvi.brightnessContrast(brightness, contrast);
+         */
+        /*
         faceFinderFront.findHaarObjects(cvi);
         eyeFinder.findHaarObjects(cvi);
         contour.findContours(cvi,minsize,maxsize,100,false,true);
         ofLog() << "Blobs found" << contour.nBlobs;
+        */
         
         /*
         for (int i=0; i<haarFinder.blobs.size(); i++) {
@@ -63,7 +70,7 @@ void ofApp::update(){
                 ofDrawRectangle(blob.boundingRect.getTopLeft().x*multiplier, blob.boundingRect.getTopLeft().y*multiplier, blob.boundingRect.width*multiplier, blob.boundingRect.height*multiplier);
             }
         }
-         */
+        */
     }
 }
 
@@ -76,14 +83,16 @@ void ofApp::draw(){
     if(face) {
         image.draw(ofGetWidth()/2-cropWidth/2,0,image.getWidth(),image.getHeight());
     }
-    
+
+    /*ofImage small;
+    small.setFromPixels(cvi.getPixels());
+    small.draw(ofGetWidth()-small.getWidth(), ofGetHeight()-small.getHeight(), small.getWidth(), small.getHeight());
+     */
+    /*
     ofxCvBlob mainblob;
     ofNoFill();
     if (showblob) {
-        ofImage small;
-        small.setFromPixels(cvi.getPixels());
-        small.draw(ofGetWidth()-small.getWidth(), ofGetHeight()-small.getHeight(), small.getWidth(), small.getHeight());
-        
+     
         ofSetColor(255, 0, 0, 255);
         for (int i=0; i<faceFinderFront.blobs.size(); i++) {
             ofxCvBlob blob = faceFinderFront.blobs[i];
@@ -105,27 +114,26 @@ void ofApp::draw(){
         }
         
     }
+    */
     
+    // alpha = ofMap(mainblob.area, min, max, 0, 255);
     
-    alpha = ofMap(mainblob.area, min, max, 0, 255);
-    
-    light.setPosition(ofGetWidth()/2, ofGetHeight()/2, 600);
-    light.enable();
-    material.begin();
-    float mainscale = mainblob.boundingRect.width / ofGetWidth() * scale;
+    // light.setPosition(ofGetWidth()/2, ofGetHeight()/2, 600);
+    // light.enable();
+    // material.begin();
+    // float mainscale = mainblob.boundingRect.width / ofGetWidth() * scale;
     //model.setPosition(ofGetWidth()/2, (float)ofGetHeight() * 0.75 , 0);
-    model.setScale(mainscale, mainscale, mainscale);
-    model.setPosition(mainblob.centroid.x*multiplier*xscale, mainblob.centroid.y*multiplier*yscale+offset, 0);
-    ofEnableDepthTest();
-    model.drawFaces();
-    ofDisableDepthTest();
+    // model.setScale(mainscale, mainscale, mainscale);
+    // model.setPosition(mainblob.centroid.x*multiplier*xscale, mainblob.centroid.y*multiplier*yscale+offset, 0);
+    // ofEnableDepthTest();
+    // model.drawFaces();
+    // ofDisableDepthTest();
     
     tracker.drawDebug();
     tracker.drawDebugPose();
     
-    
     gui.draw();
-    contour.draw();
+    // contour.draw();
 }
 
 //--------------------------------------------------------------
