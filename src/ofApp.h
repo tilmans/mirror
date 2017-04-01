@@ -26,42 +26,16 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
     ofVideoGrabber video;
-    
-    ofxCvHaarFinder faceFinderFront;
-    ofxCvHaarFinder faceFinderSide;
-    ofxCvHaarFinder eyeFinder;
-    ofxCvBlob leftEye;
-    ofxCvBlob rightEye;
-    
-    ofxCvContourFinder contour;
-    
+    ofxFaceTracker2 tracker;
+        
     ofImage image;
-    ofxCvGrayscaleImage cvi;
 
     int multiplier;
     int width,height;
     
-    ofxIntSlider offset;
-    ofxFloatSlider scale;
-    ofxIntSlider cropWidth;
-    ofxFloatSlider brightness;
-    ofxFloatSlider contrast;
-    ofxIntSlider alpha;
-    ofxIntSlider max;
-    ofxIntSlider min;
-    ofxToggle face;
-    ofxToggle showblob;
-
-    ofxIntSlider minsize;
-    ofxIntSlider maxsize;
-
+    ofxToggle videoDisplay;
+    ofxToggle showFace;
+    ofxToggle showGuide;
     ofxPanel gui;
     
-    ofxAssimpModelLoader model;
-    
-    ofLight light;
-    ofMaterial material;
-    
-    ofxFaceTracker2 tracker;
-    ofVideoGrabber grabber;
 };
